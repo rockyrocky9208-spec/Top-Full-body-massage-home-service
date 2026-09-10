@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Top Full Body Massage Home Service — Professional doorstep massage therapy for women at home & hotel. Book on WhatsApp: 9691468308." />
+  <meta name="keywords" content="top full body massage home service, home massage service, female massage home service, doorstep massage, hotel massage service" />
+  <title>Top Full Body Massage Home Service</title>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#C9A84C',
+              light: '#E8C97A',
+              dark: '#9A7A2E',
+            },
+            charcoal: {
+              DEFAULT: '#1A1A1A',
+              light: '#2A2A2A',
+              mid: '#222222',
+            },
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ── base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #0d0d0d;
+      color: #e5e5e5;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0d0d0d; }
+    ::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 3px; }
+
+    /* ── gold gradient text ── */
+    .gold-text {
+      background: linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #9A7A2E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── gold border ── */
+    .gold-border { border: 1px solid rgba(201, 168, 76, 0.35); }
+    .gold-border-top { border-top: 1px solid rgba(201, 168, 76, 0.35); }
+
+    /* ── glass card ── */
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+    }
+    .glass-dark {
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    /* ── hero ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        linear-gradient(160deg, #0d0d0d 0%, #1a1200 60%, #0d0d0d 100%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    /* ── divider ── */
+    .gold-divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+      margin: 0 auto;
+    }
+
+    /* ── cta button ── */
+    .btn-gold {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #C9A84C, #E8C97A, #9A7A2E);
+      color: #0d0d0d;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border-radius: 2px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #E8C97A, #C9A84C);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.4); }
+    .btn-gold:hover::before { opacity: 1; }
+    .btn-gold span { position: relative; z-index: 1; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 35px;
+      border: 1px solid rgba(201,168,76,0.6);
+      color: #C9A84C;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: transparent;
+      cursor: pointer;
+    }
+    .btn-outline:hover { background: rgba(201,168,76,0.1); box-shadow: 0 0 30px rgba(201,168,76,0.15); }
+
+    /* ── service card hover ── */
+    .service-card {
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(201,168,76,0.15);
+    }
+    .service-icon {
+      width: 56px; height: 56px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+      border: 1px solid rgba(201,168,76,0.3);
+      color: #C9A84C;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── gallery ── */
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* ── testimonial ── */
+    .testimonial-card {
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\u201C';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      line-height: 1;
+      color: rgba(201,168,76,0.15);
+    }
+
+    /* ── faq ── */
+    .faq-item { border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+    .faq-answer.open { max-height: 200px; }
+
+    /* ── nav / top booking bar ── */
+    #top-booking-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 110;
+      background: rgba(10,10,10,0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    #top-booking-bar .bar-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    #navbar {
+      position: fixed;
+      top: 36px; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    /* ── section animations ── */
+    .fade-up { opacity: 0; transform: translateY(40px); }
+    .fade-in { opacity: 0; }
+
+    /* ── whatsapp float ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 200;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 30px rgba(37,211,102,0.45);
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 40px rgba(37,211,102,0.6); }
+
+    /* ── map placeholder ── */
+    .map-frame { border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.2); }
+
+    /* ── mobile nav ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* ── star rating ── */
+    .stars { color: #C9A84C; letter-spacing: 2px; }
+
+    /* ── particle dots ── */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: #C9A84C;
+      pointer-events: none;
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      0% { opacity: 0; transform: translateY(0) scale(0); }
+      10% { opacity: 0.6; transform: translateY(-20px) scale(1); }
+      90% { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(-120px) scale(0.5); }
+    }
+
+    /* ── shimmer line ── */
+    .shimmer-line {
+      background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.6) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+    /* ── hover underline ── */
+    .hover-underline {
+      position: relative;
+      text-decoration: none;
+    }
+    .hover-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: #C9A84C;
+      transition: width 0.3s ease;
+    }
+    .hover-underline:hover::after { width: 100%; }
+
+    /* ── responsive ── */
+    @media (max-width: 768px) {
+      .hero-title { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+    }
+
+    /* ── photo gallery slider ── */
+    .pb-gallery { position: relative; overflow: hidden; background: #121212; }
+    .pb-slides { display: flex; transition: transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+    .pb-slide { min-width: 100%; position: relative; }
+    /* FIXED IMAGE POSITIONING SO THE FACE AT TOP IS FULLY VISIBLE */
+    .pb-slide img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .pb-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(201,168,76,0.3); cursor: pointer; transition: all 0.3s; }
+    .pb-dot.active { background: #C9A84C; transform: scale(1.3); }
+    .pb-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(10,10,10,0.7); border: 1px solid rgba(201,168,76,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: #C9A84C; cursor: pointer; z-index: 10;
+      transition: background 0.3s, border-color 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    .pb-arrow:hover { background: rgba(201,168,76,0.15); border-color: rgba(201,168,76,0.7); }
+    .pb-arrow-left { left: 12px; }
+    .pb-arrow-right { right: 12px; }
+
+    .pb-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06));
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 2px;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #C9A84C; font-weight: 500;
+    }
+
+    .pb-stat {
+      flex: 1; text-align: center;
+      padding: 14px 10px;
+      background: rgba(201,168,76,0.05);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 2px;
+    }
+
+    .pb-service-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      font-size: 0.72rem; color: #d4b96a;
+      transition: all 0.25s;
+    }
+    .pb-service-pill:hover { background: rgba(201,168,76,0.14); border-color: rgba(201,168,76,0.45); }
+    .pb-select {
+      width: 100%;
+      padding: 12px 14px;
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: #f3f3f3;
+      border-radius: 2px;
+      outline: none;
+    }
+    .pb-select option {
+      background: #121212;
+      color: #f3f3f3;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Top booking bar -->
+<div id="top-booking-bar">
+  <div class="bar-inner">
+    <div class="flex items-center gap-3">
+      <span class="text-[10px] tracking-[0.24em] uppercase text-gray-500">Home Service Massage</span>
+      <span class="w-1 h-1 rounded-full bg-gold"></span>
+      <span class="text-[10px] tracking-[0.24em] uppercase text-gray-600">WhatsApp</span>
+    </div>
+    <a href="#book-massage"
+       class="text-xs font-medium text-gold hover:text-gold-light transition-colors">
+      9691468308 &bull; Book Now
+    </a>
+  </div>
+</div>
+
+<!-- Floating WhatsApp Button (Navigates to Booking Form) -->
+<a href="#book-massage" class="wa-float" aria-label="Book on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- Navbar -->
+<nav id="navbar" class="py-4 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full border border-gold/50 flex items-center justify-center shrink-0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z"/>
+        </svg>
+      </div>
+      <span class="font-serif text-base md:text-lg tracking-wider gold-text font-semibold uppercase">Top Full Body Massage Home Service</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden xl:flex items-center gap-8 text-xs tracking-widest uppercase text-gray-400 font-medium">
+      <li><a href="#about" class="hover-underline hover:text-gold transition-colors">About</a></li>
+      <li><a href="#services" class="hover-underline hover:text-gold transition-colors">Services</a></li>
+      <li><a href="#book-massage" class="hover-underline hover:text-gold transition-colors">Book Massage</a></li>
+      <li><a href="#gallery" class="hover-underline hover:text-gold transition-colors">Gallery</a></li>
+      <li><a href="#testimonials" class="hover-underline hover:text-gold transition-colors">Reviews</a></li>
+      <li><a href="#contact" class="hover-underline hover:text-gold transition-colors">Contact</a></li>
+    </ul>
+
+    <!-- Book Button (Scrolls to Form) -->
+    <a href="#book-massage" class="hidden md:inline-flex btn-gold text-xs">
+      <span>Book Now</span>
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="xl:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <span class="block w-6 h-0.5 bg-gold transition-all duration-300"></span>
+      <span class="block w-4 h-0.5 bg-gold transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gold transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="glass-dark mt-4 mx-4 rounded-sm py-6 px-6">
+    <ul class="flex flex-col gap-5 text-sm tracking-widest uppercase text-gray-400 font-medium">
+      <li><a href="#about" class="hover:text-gold transition-colors block">About</a></li>
+      <li><a href="#services" class="hover:text-gold transition-colors block">Services</a></li>
+      <li><a href="#book-massage" class="hover:text-gold transition-colors block">Book Massage</a></li>
+      <li><a href="#gallery" class="hover:text-gold transition-colors block">Gallery</a></li>
+      <li><a href="#testimonials" class="hover:text-gold transition-colors block">Reviews</a></li>
+      <li><a href="#contact" class="hover:text-gold transition-colors block">Contact</a></li>
+    </ul>
+    <a href="#book-massage" class="btn-gold mt-6 text-xs inline-flex">
+      <span>Book Now</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <!-- Orbs -->
+  <div class="hero-orb w-[600px] h-[600px] bg-gold/10 top-[-10%] right-[-15%]"></div>
+  <div class="hero-orb w-[400px] h-[400px] bg-gold/8 bottom-[-5%] left-[-10%]"></div>
+
+  <!-- Particles -->
+  <div id="particles-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+    <div class="inline-flex items-center gap-3 glass px-5 py-2.5 rounded-full mb-8 fade-in" id="hero-tag">
+      <div class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
+      <span class="text-gold text-xs tracking-[0.2em] uppercase font-medium">Top Full Body Massage Home Service</span>
+    </div>
+
+    <h1 class="font-serif hero-title text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.05] mb-6 fade-up" id="hero-headline">
+      Top Full Body Massage<br />
+      <span class="gold-text font-semibold">Home Service</span>
+    </h1>
+
+    <p class="text-gray-400 text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed mb-10 fade-up" id="hero-sub">
+      Experience luxury doorstep body massage for women. Certified professional therapists delivering soothing, high-privacy massage therapy at your home or hotel.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-up" id="hero-ctas">
+      <a href="#book-massage" class="btn-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>Book Now</span>
+      </a>
+      <a href="#services" class="btn-outline">
+        <span>Explore Services</span>
+      </a>
+    </div>
+
+    <!-- Clickable Phone Number Call Button -->
+    <div class="mt-6 flex justify-center fade-up">
+      <a href="tel:+919691468308" class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full glass border border-gold/40 text-gold hover:text-gold-light hover:border-gold text-sm md:text-base font-semibold tracking-widest transition-all">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7 2 2 0 011.99-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6a16 16 0 006.29 6.29l.38-.38a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>Call Now: 9691468308</span>
+      </a>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-10 mt-10 fade-up" id="hero-stats">
+      <div class="text-center">
+        <p class="font-serif text-3xl gold-text font-semibold">1000+</p>
+        <p class="text-gray-500 text-xs tracking-widest uppercase mt-1">Happy Clients</p>
+      </div>
+      <div class="w-px bg-gold/20 hidden sm:block"></div>
+      <div class="text-center">
+        <p class="font-serif text-3xl gold-text font-semibold">7+</p>
+        <p class="text-gray-500 text-xs tracking-widest uppercase mt-1">Services</p>
+      </div>
+      <div class="w-px bg-gold/20 hidden sm:block"></div>
+      <div class="text-center">
+        <p class="font-serif text-3xl gold-text font-semibold">5★</p>
+        <p class="text-gray-500 text-xs tracking-widest uppercase mt-1">Rated</p>
+      </div>
+      <div class="w-px bg-gold/20 hidden sm:block"></div>
+      <div class="text-center">
+        <p class="font-serif text-3xl gold-text font-semibold">100%</p>
+        <p class="text-gray-500 text-xs tracking-widest uppercase mt-1">Doorstep Privacy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+    <span class="text-xs tracking-widest uppercase text-gray-500">Scroll</span>
+    <div class="w-px h-10 shimmer-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-28 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-up">
+        <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">About Us</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-white font-light leading-tight mb-6">
+          Premium Doorstep Massage<br /><span class="gold-text font-semibold">For Women's Relaxation</span>
+        </h2>
+        <div class="gold-divider mb-8" style="margin-left:0; width:60px;"></div>
+        <p class="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">
+          At Top Full Body Massage Home Service, we bring five-star luxury massage therapy straight to your home or hotel. Enjoy therapeutic treatments tailored to relieve fatigue, back stiffness, and stress in complete privacy.
+        </p>
+        <p class="text-gray-400 leading-relaxed mb-10 text-sm md:text-base">
+          Our certified therapists ensure maximum cleanliness, natural aromatic oils, and customized techniques suited to your comfort.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p class="text-white text-sm font-medium">Certified Therapists</p>
+              <p class="text-gray-500 text-xs mt-0.5">Trained professionals</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p class="text-white text-sm font-medium">Doorstep Convenience</p>
+              <p class="text-gray-500 text-xs mt-0.5">Home & Hotel service</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p class="text-white text-sm font-medium">100% Safe & Hygienic</p>
+              <p class="text-gray-500 text-xs mt-0.5">Fresh oils & linens</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p class="text-white text-sm font-medium">Flexible Booking</p>
+              <p class="text-gray-500 text-xs mt-0.5">7 days availability</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative fade-up">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-sm overflow-hidden h-56 md:h-72">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80" alt="Woman receiving massage" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="rounded-sm overflow-hidden h-56 md:h-72 mt-8">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80" alt="Home massage therapy" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="rounded-sm overflow-hidden h-40 md:h-48 col-span-2">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Aromatherapy massage setup" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+        <div class="absolute -top-4 -right-4 w-24 h-24 border border-gold/20 rounded-sm pointer-events-none"></div>
+        <div class="absolute -bottom-4 -left-4 w-16 h-16 border border-gold/20 rounded-sm pointer-events-none"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-28 px-6 md:px-12" style="background: linear-gradient(180deg, transparent, rgba(201,168,76,0.03) 50%, transparent);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Our Offerings</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        Signature <span class="gold-text font-semibold">Home Massages</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm md:text-base">
+        Click any service below to select it and fill your booking request instantly.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <!-- Swedish -->
+      <div class="service-card glass rounded-sm p-6 fade-up flex flex-col justify-between" onclick="selectServiceAndScroll('Swedish Body Massage')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Swedish Massage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Gentle, long flowing strokes to improve circulation and melt away daily body stress.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              60 / 90 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Tissue -->
+      <div class="service-card glass rounded-sm p-6 fade-up flex flex-col justify-between" onclick="selectServiceAndScroll('Deep Tissue Relief Massage')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Deep Tissue Relief</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Targeted firm pressure to release deep muscle knots, back stiffness, and chronic strain.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              60 / 90 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aromatherapy -->
+      <div class="service-card glass rounded-sm p-6 fade-up flex flex-col justify-between" onclick="selectServiceAndScroll('Aromatherapy Massage')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Aromatherapy Spa</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Infused essential oils tailored for ultimate tranquility, stress relief, and skin nourishment.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              60 / 90 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hot Stone -->
+      <div class="service-card glass rounded-sm p-6 fade-up flex flex-col justify-between" onclick="selectServiceAndScroll('Hot Stone Relaxing Massage')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Hot Stone Massage</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Smooth heated stones warm and soothe tense muscles to induce deep physical bliss.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              75 / 90 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Head & Shoulder -->
+      <div class="service-card glass rounded-sm p-6 fade-up flex flex-col justify-between" onclick="selectServiceAndScroll('Head, Neck & Back Relief')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Head & Shoulder Relief</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Relieves neck stiffness, migraine tension, and shoulder soreness with focused pressure.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              30 / 45 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foot Reflexology -->
+      <div class="service-card glass rounded-sm p-6 fade-up flex flex-col justify-between" onclick="selectServiceAndScroll('Foot Reflexology')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Foot Reflexology</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Stimulates pressure points on feet to boost blood flow, relieve leg tiredness, and induce deep rest.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              45 / 60 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Body Spa -->
+      <div class="service-card glass rounded-sm p-6 fade-up sm:col-span-2 lg:col-span-1 flex flex-col justify-between" onclick="selectServiceAndScroll('Full Body Spa Massage')">
+        <div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-white font-medium mb-2">Full Body Spa Combo</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Complete head-to-toe relaxation combining oil massage, body stretch, and soothing aromatherapy.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5 text-gray-500 text-xs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              90 / 120 min
+            </div>
+            <span class="font-serif text-gold font-semibold text-lg">Home Service</span>
+          </div>
+          <div class="mt-4 pt-4 gold-border-top">
+            <span class="text-gold text-xs tracking-widest uppercase hover:text-gold-light transition-colors flex items-center gap-2 font-semibold">
+              Book Now
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASSAGE BOOKING & PHOTO SLIDER (3 PHOTOS) -->
+<section id="book-massage" class="py-28 px-6 md:px-12" style="background: rgba(201,168,76,0.015);">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Instant Booking Form</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        Book Your <span class="gold-text font-semibold">Home Massage</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+      <p class="text-gray-500 max-w-lg mx-auto text-sm">Fill in your requirements below and send directly on WhatsApp to confirm your slot.</p>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="glass rounded-sm overflow-hidden fade-up max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-0">
+
+        <!-- LEFT: Photo Gallery (3 Photos with FIXED TOP ALIGNMENT) -->
+        <div class="pb-gallery" id="pbGallery">
+          <div class="pb-slides" id="pbSlides">
+
+            <!-- PHOTO 1 -->
+            <div class="pb-slide">
+              <img src="profile photos/WhatsApp Image 2026-09-10 at 12.58.26.jpeg" alt="Massage Photo 1" />
+            </div>
+
+            <!-- PHOTO 2 -->
+            <div class="pb-slide">
+              <img src="profile photos/WhatsApp Image 2026-09-10 at 12.58.27 (1).jpeg" alt="Massage Photo 2" />
+            </div>
+
+            <!-- PHOTO 3 -->
+            <div class="pb-slide">
+              <img src="profile photos/WhatsApp Image 2026-09-10 at 12.58.27.jpeg" alt="Massage Photo 3" />
+            </div>
+
+          </div>
+
+          <!-- Arrows -->
+          <button class="pb-arrow pb-arrow-left" onclick="pbPrev()" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="pb-arrow pb-arrow-right" onclick="pbNext()" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <!-- Gold overlay bar at bottom -->
+          <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#C9A84C,transparent);"></div>
+
+          <!-- Dots (3 dots) -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="pbDots">
+            <div class="pb-dot active" onclick="pbGoTo(0)"></div>
+            <div class="pb-dot" onclick="pbGoTo(1)"></div>
+            <div class="pb-dot" onclick="pbGoTo(2)"></div>
+          </div>
+
+          <!-- Photo counter -->
+          <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs text-gold font-medium" id="pbCounter">1 / 3</div>
+        </div>
+
+        <!-- RIGHT: Booking Form -->
+        <div class="p-8 flex flex-col justify-between">
+
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="pb-tag">
+                <svg width="8" height="8" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#C9A84C"/></svg>
+                Available Today
+              </span>
+              <span class="pb-tag" style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.4);">Verified Therapists</span>
+            </div>
+
+            <h3 class="font-serif text-2xl md:text-3xl text-white font-semibold mb-1">Top Full Body Massage Home Service</h3>
+            <p class="gold-text font-serif text-base font-medium mb-5">Doorstep Relaxation & Spa Care</p>
+
+            <!-- Stats row -->
+            <div class="flex gap-3 mb-6">
+              <div class="pb-stat">
+                <p class="font-serif text-lg text-white font-semibold">100%</p>
+                <p class="text-gray-600 text-xs tracking-wide mt-0.5">Private & Safe</p>
+              </div>
+              <div class="pb-stat">
+                <p class="font-serif text-lg text-white font-semibold">5★</p>
+                <p class="text-gray-600 text-xs tracking-wide mt-0.5">Top Rated</p>
+              </div>
+              <div class="pb-stat">
+                <p class="font-serif text-lg text-white font-semibold">Doorstep</p>
+                <p class="text-gray-600 text-xs tracking-wide mt-0.5">Home & Hotel</p>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <p class="text-gray-400 text-xs leading-relaxed mb-6">
+              Indulge in personalized body massage therapy delivered straight to your doorstep. Relief from fatigue, stress, and muscle aches in total privacy.
+            </p>
+
+            <!-- Services offered -->
+            <div class="mb-6">
+              <p class="text-gold text-xs tracking-[0.2em] uppercase mb-2.5">Available Therapies</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pb-service-pill">Swedish Massage</span>
+                <span class="pb-service-pill">Deep Tissue</span>
+                <span class="pb-service-pill">Aromatherapy</span>
+                <span class="pb-service-pill">Hot Stone</span>
+                <span class="pb-service-pill">Full Body Spa</span>
+                <span class="pb-service-pill">Head & Back</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Booking selection form -->
+          <div class="space-y-4 mb-6">
+            <div>
+              <label for="mbMassageType" class="block text-gold text-[11px] tracking-[0.18em] uppercase mb-1.5">Which Massage Do You Need?</label>
+              <select id="mbMassageType" class="pb-select text-sm">
+                <option value="Swedish Body Massage">Swedish Body Massage</option>
+                <option value="Deep Tissue Relief Massage">Deep Tissue Relief Massage</option>
+                <option value="Aromatherapy Massage">Aromatherapy Massage</option>
+                <option value="Hot Stone Relaxing Massage">Hot Stone Relaxing Massage</option>
+                <option value="Full Body Spa Massage">Full Body Spa Massage</option>
+                <option value="Head, Neck & Back Relief">Head, Neck & Back Relief</option>
+                <option value="Foot Reflexology">Foot Reflexology</option>
+              </select>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label for="mbDuration" class="block text-gold text-[11px] tracking-[0.18em] uppercase mb-1.5">Session Duration</label>
+                <select id="mbDuration" class="pb-select text-sm">
+                  <option value="60 Minutes">60 Minutes</option>
+                  <option value="90 Minutes">90 Minutes</option>
+                  <option value="120 Minutes">120 Minutes (2 Hours)</option>
+                </select>
+              </div>
+              <div>
+                <label for="mbLocation" class="block text-gold text-[11px] tracking-[0.18em] uppercase mb-1.5">Service Location</label>
+                <select id="mbLocation" class="pb-select text-sm">
+                  <option value="Doorstep / Home Service">Doorstep / Home Service</option>
+                  <option value="Hotel Service">Hotel Service</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="button"
+             onclick="bookMassage()"
+             class="btn-gold w-full justify-center text-xs border-0 py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Book Massage on WhatsApp</span>
+          </button>
+
+          <p class="text-gray-600 text-xs text-center mt-3 leading-relaxed">Professional Home Massage &bull; 100% Privacy Guaranteed</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // ── Massage Photo Slider (3 Photos) ──
+  let pbCurrent = 0;
+  const pbTotal = 3;
+
+  function pbGoTo(index) {
+    pbCurrent = index;
+    document.getElementById('pbSlides').style.transform = `translateX(-${pbCurrent * 100}%)`;
+    document.getElementById('pbCounter').textContent = `${pbCurrent + 1} / ${pbTotal}`;
+    document.querySelectorAll('.pb-dot').forEach((d, i) => d.classList.toggle('active', i === pbCurrent));
+  }
+
+  function pbNext() { pbGoTo((pbCurrent + 1) % pbTotal); }
+  function pbPrev() { pbGoTo((pbCurrent - 1 + pbTotal) % pbTotal); }
+
+  function selectServiceAndScroll(serviceName) {
+    const selectEl = document.getElementById('mbMassageType');
+    if (selectEl) {
+      selectEl.value = serviceName;
+    }
+    const formEl = document.getElementById('book-massage');
+    if (formEl) {
+      formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function bookMassage() {
+    const massageType = document.getElementById('mbMassageType')?.value || 'Swedish Body Massage';
+    const duration = document.getElementById('mbDuration')?.value || '60 Minutes';
+    const location = document.getElementById('mbLocation')?.value || 'Doorstep / Home Service';
+    const message = `Hello,
+I would like to book a home massage session for women.
+
+Service Name: Top Full Body Massage Home Service
+Massage Type: ${massageType}
+Duration: ${duration}
+Service Location: ${location}
+Preferred Date:
+Preferred Time:
+Name:`;
+    window.open(`https://wa.me/919691468308?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+  }
+
+  // Touch/swipe support
+  let pbStartX = 0;
+  const pbGallery = document.getElementById('pbGallery');
+  if (pbGallery) {
+    pbGallery.addEventListener('touchstart', e => { pbStartX = e.touches[0].clientX; }, { passive: true });
+    pbGallery.addEventListener('touchend', e => {
+      const diff = pbStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? pbNext() : pbPrev();
+    });
+  }
+
+  // Auto-advance
+  setInterval(pbNext, 4000);
+</script>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-28 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Our Experience</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        Doorstep <span class="gold-text font-semibold">Relaxation</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+    </div>
+
+    <!-- Masonry grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 fade-up">
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80" alt="Woman receiving relaxing body massage" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border row-span-2 hidden md:block" style="height: auto;">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80" alt="Luxury spa massage room" loading="lazy" style="height:100%; min-height:330px;" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80" alt="Aromatherapy spa candles and flowers" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&q=80" alt="Woman enjoying head massage" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80" alt="Hot stone massage therapy" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border">
+        <img src="https://images.unsplash.com/photo-1561049933-c8fbef47b329?w=500&q=80" alt="Fresh spa towels and orchids" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item rounded-sm h-48 md:h-64 gold-border">
+        <img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?w=500&q=80" alt="Essential wellness oils" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" class="py-28 px-6 md:px-12" style="background: linear-gradient(180deg, transparent, rgba(201,168,76,0.04) 50%, transparent);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Why Choose Us</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        The <span class="gold-text font-semibold">Difference</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="glass rounded-sm p-7 fade-up group hover:border-gold/40 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/15 transition-colors">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-white font-medium mb-2">Certified Therapists</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">All therapists hold accredited certifications in body massage and holistic therapy, ensuring safe, expert treatment.</p>
+      </div>
+
+      <div class="glass rounded-sm p-7 fade-up group hover:border-gold/40 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/15 transition-colors">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-white font-medium mb-2">Premium Hygiene</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Fresh organic linens for every client, sterilized therapy equipment, and high-quality natural massage oils.</p>
+      </div>
+
+      <div class="glass rounded-sm p-7 fade-up group hover:border-gold/40 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/15 transition-colors">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-white font-medium mb-2">Private & Safe</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Complete doorstep privacy guaranteed. Relax in the security of your own home or hotel room.</p>
+      </div>
+
+      <div class="glass rounded-sm p-7 fade-up group hover:border-gold/40 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/15 transition-colors">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-white font-medium mb-2">Easy WhatsApp Booking</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">No app downloads or forms needed. Message us directly on WhatsApp to confirm your appointment within minutes.</p>
+      </div>
+
+      <div class="glass rounded-sm p-7 fade-up group hover:border-gold/40 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/15 transition-colors">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-white font-medium mb-2">Doorstep Home & Hotel</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Available at doorstep home or hotel service for ultimate relaxation without traveling.</p>
+      </div>
+
+      <div class="glass rounded-sm p-7 fade-up group hover:border-gold/40 transition-all duration-300">
+        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/15 transition-colors">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-white font-medium mb-2">5-Star Rated</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Consistently top-rated by female clients for professionalism, cleanliness, and soothing relaxation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-28 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Client Reviews</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        What Our Clients <span class="gold-text font-semibold">Say</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="testimonial-card glass rounded-sm p-7 fade-up">
+        <div class="stars text-sm mb-4">★★★★★</div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">"The Swedish massage was pure bliss! The therapist was so respectful and skilled. All my neck and back tension disappeared. Will definitely be booking regularly."</p>
+        <div class="flex items-center gap-3 gold-border-top pt-4">
+          <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center">
+            <span class="font-serif text-gold font-semibold">P</span>
+          </div>
+          <div>
+            <p class="text-white text-sm font-medium">Priya Sharma</p>
+            <p class="text-gray-600 text-xs">IT Professional</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass rounded-sm p-7 fade-up">
+        <div class="stars text-sm mb-4">★★★★★</div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">"The doorstep massage service was so convenient and high quality. The oils smelled divine and the atmosphere was super peaceful. 10/10 experience!"</p>
+        <div class="flex items-center gap-3 gold-border-top pt-4">
+          <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center">
+            <span class="font-serif text-gold font-semibold">A</span>
+          </div>
+          <div>
+            <p class="text-white text-sm font-medium">Ananya Roy</p>
+            <p class="text-gray-600 text-xs">Fashion Designer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass rounded-sm p-7 fade-up">
+        <div class="stars text-sm mb-4">★★★★★</div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">"Deep tissue therapy helped cure my chronic shoulder strain. Extremely clean, safe, and professional setup. Booking on WhatsApp took under 1 minute."</p>
+        <div class="flex items-center gap-3 gold-border-top pt-4">
+          <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center">
+            <span class="font-serif text-gold font-semibold">S</span>
+          </div>
+          <div>
+            <p class="text-white text-sm font-medium">Sophia Patel</p>
+            <p class="text-gray-600 text-xs">Corporate Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass rounded-sm p-7 fade-up">
+        <div class="stars text-sm mb-4">★★★★★</div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">"Aromatherapy session was heavenly! The essential oil blend customized for my stress left me feeling deeply restored and relaxed."</p>
+        <div class="flex items-center gap-3 gold-border-top pt-4">
+          <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center">
+            <span class="font-serif text-gold font-semibold">M</span>
+          </div>
+          <div>
+            <p class="text-white text-sm font-medium">Meera Verma</p>
+            <p class="text-gray-600 text-xs">Entrepreneur</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass rounded-sm p-7 fade-up">
+        <div class="stars text-sm mb-4">★★★★★</div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">"Best home massage experience! Very polite staff, utmost privacy, and authentic hot stone treatment. Highly recommended for all ladies needing stress relief."</p>
+        <div class="flex items-center gap-3 gold-border-top pt-4">
+          <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center">
+            <span class="font-serif text-gold font-semibold">R</span>
+          </div>
+          <div>
+            <p class="text-white text-sm font-medium">Ritu Agarwal</p>
+            <p class="text-gray-600 text-xs">Architect</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass rounded-sm p-7 fade-up">
+        <div class="stars text-sm mb-4">★★★★★</div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">"The head and shoulder massage instantly cured my migraine. Thoroughly impressed by the hygiene and soothing touch."</p>
+        <div class="flex items-center gap-3 gold-border-top pt-4">
+          <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center">
+            <span class="font-serif text-gold font-semibold">P</span>
+          </div>
+          <div>
+            <p class="text-white text-sm font-medium">Pooja Sen</p>
+            <p class="text-gray-600 text-xs">Doctor</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-28 px-6 md:px-12" style="background: rgba(201,168,76,0.015);">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Questions</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        Frequently Asked <span class="gold-text font-semibold">Questions</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+    </div>
+
+    <div class="space-y-0 fade-up" id="faq-list">
+
+      <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between">
+          <h3 class="text-white font-medium text-sm md:text-base pr-6">Do you offer doorstep home & hotel massage service?</h3>
+          <div class="faq-icon w-6 h-6 shrink-0 rounded-full border border-gold/40 flex items-center justify-center text-gold transition-transform duration-300">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer text-gray-500 text-sm leading-relaxed">
+          <p class="pt-4">Yes! We specialize in doorstep home and hotel massage services for women for maximum comfort and privacy.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between">
+          <h3 class="text-white font-medium text-sm md:text-base pr-6">How do I book a massage session?</h3>
+          <div class="faq-icon w-6 h-6 shrink-0 rounded-full border border-gold/40 flex items-center justify-center text-gold transition-transform duration-300">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer text-gray-500 text-sm leading-relaxed">
+          <p class="pt-4">Click any <strong>Book Now</strong> button to scroll to our form, choose your preferred massage, and send directly on WhatsApp to <strong>9691468308</strong>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between">
+          <h3 class="text-white font-medium text-sm md:text-base pr-6">What safety & hygiene standards do you follow?</h3>
+          <div class="faq-icon w-6 h-6 shrink-0 rounded-full border border-gold/40 flex items-center justify-center text-gold transition-transform duration-300">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer text-gray-500 text-sm leading-relaxed">
+          <p class="pt-4">We use fresh organic linens for every appointment, high-grade sanitization, and 100% natural essential oils for maximum safety and comfort.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between">
+          <h3 class="text-white font-medium text-sm md:text-base pr-6">Are your therapists certified?</h3>
+          <div class="faq-icon w-6 h-6 shrink-0 rounded-full border border-gold/40 flex items-center justify-center text-gold transition-transform duration-300">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer text-gray-500 text-sm leading-relaxed">
+          <p class="pt-4">Yes, all our therapists are accredited and professionally trained in body therapy, deep tissue massage, and doorstep wellness care.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-28 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase font-medium mb-4">Get In Touch</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-white font-light mb-4">
+        Contact & <span class="gold-text font-semibold">Booking</span>
+      </h2>
+      <div class="gold-divider mb-6"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+      <!-- Contact Info -->
+      <div class="fade-up">
+        <div class="glass rounded-sm p-8 mb-6">
+          <h3 class="font-serif text-2xl text-white font-medium mb-6">Contact Information</h3>
+
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7 2 2 0 011.99-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6a16 16 0 006.29 6.29l.38-.38a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Phone Call</p>
+                <a href="tel:+919691468308" class="text-white font-medium hover:text-gold transition-colors">9691468308</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Email Address</p>
+                <a href="mailto:rockyrocky9208@gmail.com" class="text-white font-medium hover:text-gold transition-colors">rockyrocky9208@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">WhatsApp Booking</p>
+                <a href="#book-massage" class="text-white font-medium hover:text-gold transition-colors">Chat & Book on WhatsApp (9691468308)</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-1">Service Timings</p>
+                <div class="text-white text-sm space-y-1">
+                  <div class="flex justify-between gap-8">
+                    <span class="text-gray-500">Monday – Sunday</span>
+                    <span>10:00 AM – 10:00 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#book-massage" class="btn-gold mt-8 text-xs w-full justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Book Now</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="fade-up">
+        <div class="map-frame h-80 md:h-full min-h-[400px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6828397042!2d54.89787585!3d25.076457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1692000000000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0; filter: invert(90%) hue-rotate(180deg) saturate(0.8);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Location Map">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-gold/10 py-12 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-10">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded-full border border-gold/50 flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z"/>
+            </svg>
+          </div>
+          <span class="font-serif text-sm md:text-base tracking-widest gold-text font-semibold uppercase">Top Full Body Massage Home Service</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">Professional doorstep full body massage therapy for women. Total privacy, luxury care, and certified wellness.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <p class="text-gold text-xs tracking-[0.2em] uppercase mb-4">Quick Links</p>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="#about" class="hover:text-gold transition-colors hover-underline">About Us</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors hover-underline">Our Services</a></li>
+          <li><a href="#book-massage" class="hover:text-gold transition-colors hover-underline">Book Massage</a></li>
+          <li><a href="#gallery" class="hover:text-gold transition-colors hover-underline">Gallery</a></li>
+          <li><a href="#contact" class="hover:text-gold transition-colors hover-underline">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <p class="text-gold text-xs tracking-[0.2em] uppercase mb-4">Contact Info</p>
+        <div class="space-y-2 text-sm text-gray-400">
+          <p>Phone: <a href="tel:+919691468308" class="hover:text-gold">9691468308</a></p>
+          <p>Email: <a href="mailto:rockyrocky9208@gmail.com" class="hover:text-gold">rockyrocky9208@gmail.com</a></p>
+          <p>Hours: Mon – Sun (10am – 10pm)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gold/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-700 text-xs">© 2026 Top Full Body Massage Home Service. All rights reserved.</p>
+      <p class="text-gray-700 text-xs">Designed for ultimate relaxation and comfort.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // FAQ accordion
+  function toggleFaq(item) {
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon');
+    const isOpen = answer.classList.contains('open');
+
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+    if (!isOpen) {
+      answer.classList.add('open');
+      icon.style.transform = 'rotate(45deg)';
+    }
+  }
+
+  // Particles
+  function createParticle() {
+    const container = document.getElementById('particles-container');
+    if (!container) return;
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 3 + 1;
+    p.style.cssText = `
+      width: ${size}px; height: ${size}px;
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      animation-duration: ${Math.random() * 6 + 4}s;
+      animation-delay: ${Math.random() * 4}s;
+      opacity: 0;
+    `;
+    container.appendChild(p);
+    setTimeout(() => p.remove(), 12000);
+  }
+  setInterval(createParticle, 400);
+
+  // GSAP Animations
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline({ delay: 0.2 })
+    .to('#hero-tag', { opacity: 1, duration: 0.8, ease: 'power2.out' })
+    .to('#hero-headline', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.3')
+    .to('#hero-sub', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.4')
+    .to('#hero-ctas', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.4')
+    .to('#hero-stats', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.3');
+
+  gsap.utils.toArray('.fade-up').forEach((el, i) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1, y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        delay: (i % 4) * 0.08,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  });
+
+  gsap.utils.toArray('.fade-in').forEach(el => {
+    gsap.fromTo(el,
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  gsap.to('.hero-orb', {
+    y: -80,
+    ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
