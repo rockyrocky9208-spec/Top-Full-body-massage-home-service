@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Main Homepage -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&amp;q=80</image:loc>
+      <image:title>Top Full Body Massage Home Service</image:title>
+      <image:caption>Doorstep professional full body massage therapy for women at home and hotel</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Us Section -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#about</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Signature Services Section -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#services</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Direct Massage Booking Form -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#book-massage</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Photo Gallery -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#gallery</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Why Choose Us -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#why</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Client Reviews and Testimonials -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#testimonials</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Frequently Asked Questions -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#faq</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact & WhatsApp Location -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#contact</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Visual Interactive Sitemap -->
+  <url>
+    <loc>https://topfullbodymassagehomeservice.com/#sitemap</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

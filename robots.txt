@@ -1,0 +1,6 @@
+# Robots.txt for Top Full Body Massage Home Service
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://topfullbodymassagehomeservice.com/sitemap.xml
